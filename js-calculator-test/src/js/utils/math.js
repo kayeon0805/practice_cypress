@@ -1,7 +1,7 @@
 export const OPERATOR = {
     "+": "ADD",
     "-": "SUBTRACT",
-    x: "MULTIPLY",
+    X: "MULTIPLY",
     "/": "DIVIDE",
 };
 
