@@ -21,7 +21,7 @@
 </p>
 
 <p align="middle">
-  <a href="https://blackcoffee-study.github.io/js-calculator-test/">🖥️ 데모 링크</a>
+  <a href="https://blackcoffee-study.github.io/js-calculator/">🖥️ 데모 링크</a>
 </p>
 
 ## 🎯 기능 요구사항
@@ -44,7 +44,7 @@
 
 ## 📄 참고 사항
 
-- 숫자 입력은 **클릭**으로만 가능하다.
+숫자 입력은 **클릭**으로만 가능하다.
 
 <br/>
 
