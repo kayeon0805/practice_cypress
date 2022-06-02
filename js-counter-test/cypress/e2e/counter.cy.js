@@ -1,5 +1,5 @@
 // - [o] counter의 초기값은 0이다.
-// - [] + 버튼을 클릭 시 count가 1증가한다.
+// - [o] + 버튼을 클릭 시 count가 1증가한다.
 // - [] - 버튼을 클릭 시 count가 1감소한다.
 // - [] + 버튼을 클릭 시 count가 10이 넘는 경우 더이상 증가하지 못한다. (Max 값이 10)
 // - [] - 버튼을 클릭 시 count가 0보다 작아지는 경우 감소하지 못한다. (Min 값이 0)
@@ -12,5 +12,20 @@ describe("example counter app", () => {
 
     it("counter의 초기값은 0이다.", () => {
         cy.get("#value").invoke("text").should("eq", "0");
+    });
+
+    it("+ 버튼을 클릭 시 count가 1증가한다.", () => {
+        // 먼저 기존 값을 가져오고,
+        // + 버튼을 클릭한 다음에
+        // 변화된 값이 + 1인지 체크
+        cy.get("#value")
+            .invoke("text")
+            .then((value) => {
+                const preValue = Number(value);
+                cy.get(".increase-btn").click();
+                cy.get("#value")
+                    .invoke("text")
+                    .should("eq", String(preValue + 1));
+            });
     });
 });
