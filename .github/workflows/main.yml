@@ -1,0 +1,29 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# trigger될 Event를 정의
+on:
+  # main 브랜치에서 push, pull_request가 일어나면 Job이 실행
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # Job을 어떤 OS에서 실행할 지 정의
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # steps에서 Job이 할 수 있는 동작들을 나열
+    steps:
+      - name: Run pwd
+        run: pwd # 현재 사용자가 어떤 디렉토링 있는 알려주는 명령어
+
+      - name: Run ls -al
+        run: ls -al # Runner가 제공하는 디렉토리에 어떤 파일들이 있는지 알려줌.
